@@ -46,8 +46,8 @@
                       <Component id="jScrollPane1" min="-2" pref="950" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextField1" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
-                              <Component id="jTextField3" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                              <Component id="txtid" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
+                              <Component id="txtSpeed" alignment="0" min="-2" pref="296" max="-2" attributes="0"/>
                               <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -55,8 +55,8 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField4" min="-2" pref="296" max="-2" attributes="0"/>
-                              <Component id="jTextField2" min="-2" pref="296" max="-2" attributes="0"/>
+                              <Component id="txtHarga" min="-2" pref="296" max="-2" attributes="0"/>
+                              <Component id="txtNama" min="-2" pref="296" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -85,8 +85,8 @@
                   </Group>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtid" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtNama" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -95,8 +95,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField3" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtSpeed" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="txtHarga" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -125,7 +125,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="tblPaket">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>
@@ -169,6 +169,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblPaketMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -204,15 +207,15 @@
             <Property name="text" type="java.lang.String" value="Harga"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtid">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="txtNama">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="txtSpeed">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txtHarga">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtHargaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnTambah">
@@ -227,11 +230,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Hapus"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnBatal">
           <Properties>
             <Property name="text" type="java.lang.String" value="Batal"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBatalActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
