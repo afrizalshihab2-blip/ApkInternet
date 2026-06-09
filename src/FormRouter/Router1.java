@@ -33,27 +33,30 @@ protected void kosong(){
     }
    
      protected void datatable(){
-        Object[] Baris ={"ID Router","Nama","Stok"};
-        tabmode = new DefaultTableModel(null, Baris);
-        
+    Object[] Baris = {"ID Router","Nama","Stok"};
+    tabmode = new DefaultTableModel(null, Baris);
+    String cariitem = txtcari.getText();
 
-        try {
-                String sql = "SELECT * FROM router order by id_router asc";
-                Statement stat = conn.createStatement();
-                ResultSet hasil = stat.executeQuery(sql);
-                while (hasil.next()){
-                        tabmode.addRow(new Object[]{
-                            hasil.getString(1),
-                            hasil.getString(2),
-                            hasil.getString(3)
-                            
-                        });
-                }
-                tblRouter.setModel(tabmode);
-        } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "data gagal dipanggil"+e);
+    try {
+        String sql = "SELECT * FROM router WHERE id_router LIKE '%" + cariitem + "%' OR nama LIKE '%" + cariitem + "%' ORDER BY id_router ASC";
+
+        Statement stat = conn.createStatement();
+        ResultSet hasil = stat.executeQuery(sql);
+
+        while (hasil.next()){
+            tabmode.addRow(new Object[]{
+                hasil.getString(1),
+                hasil.getString(2),
+                hasil.getString(3)
+            });
         }
+
+        tblRouter.setModel(tabmode);
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "data gagal dipanggil " + e);
     }
+}
     /**
      * Creates new form Router1
      */
@@ -81,6 +84,8 @@ protected void kosong(){
         btnTambah = new javax.swing.JButton();
         jLnama = new javax.swing.JLabel();
         btnUbah = new javax.swing.JButton();
+        bcari = new javax.swing.JButton();
+        txtcari = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -164,6 +169,25 @@ protected void kosong(){
             }
         });
 
+        bcari.setText("Cari");
+        bcari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bcariActionPerformed(evt);
+            }
+        });
+
+        txtcari.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtcari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcariActionPerformed(evt);
+            }
+        });
+        txtcari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtcariKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -181,16 +205,21 @@ protected void kosong(){
                         .addComponent(btnUbah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLnama)
                     .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLstok)
-                            .addComponent(txtStok, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(bcari)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtcari))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLstok)
+                                .addComponent(txtStok, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLidrouter)
-                            .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(626, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -212,7 +241,11 @@ protected void kosong(){
                         .addComponent(jLidrouter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bcari)
+                    .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -220,7 +253,7 @@ protected void kosong(){
                     .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUbah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(288, 288, 288))
+                .addContainerGap(251, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -297,8 +330,23 @@ protected void kosong(){
          
     }//GEN-LAST:event_tblRouterMouseClicked
 
+    private void bcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcariActionPerformed
+        datatable();
+    }//GEN-LAST:event_bcariActionPerformed
+
+    private void txtcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcariActionPerformed
+
+    private void txtcariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcariKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+        datatable();
+    }
+    }//GEN-LAST:event_txtcariKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bcari;
     private javax.swing.JButton btnBatal;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
@@ -311,6 +359,7 @@ protected void kosong(){
     private javax.swing.JTable tblRouter;
     private javax.swing.JTextField txtNama;
     private javax.swing.JTextField txtStok;
+    private javax.swing.JTextField txtcari;
     private javax.swing.JTextField txtid;
     // End of variables declaration//GEN-END:variables
 }
