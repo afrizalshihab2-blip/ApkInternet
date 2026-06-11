@@ -30,9 +30,10 @@ public class Teknisi1 extends javax.swing.JPanel {
     protected void datatable(){
         Object[] Baris ={"ID Teknisi","Nama Teknisi","No.Telepon"};
           tabmode = new DefaultTableModel(null, Baris);
+          String cariitem=txtcari.getText();
          
         try{
-            String sql = "SELECT * FROM teknisi where id_teknisi order by id_teknisi asc";
+            String sql =  "SELECT * FROM teknisi where id_teknisi like '%"+cariitem+"%' or nama like '%"+cariitem+"%' order by id_teknisi asc";
             Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
             while (hasil.next()){
@@ -67,6 +68,8 @@ public class Teknisi1 extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         jButtonTambah = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        bcari = new javax.swing.JButton();
+        txtcari = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -129,6 +132,19 @@ public class Teknisi1 extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel9.setText("Nama :");
 
+        bcari.setText("Cari Teknisi");
+        bcari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bcariActionPerformed(evt);
+            }
+        });
+
+        txtcari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtcariKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -154,16 +170,29 @@ public class Teknisi1 extends javax.swing.JPanel {
                                 .addComponent(jButtonHapus)
                                 .addGap(77, 77, 77)
                                 .addComponent(jButtonBatal))))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110)
+                        .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bcari))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(377, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(122, 122, 122)
-                .addComponent(jLabel1)
-                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(122, 122, 122)
+                        .addComponent(jLabel1)
+                        .addGap(12, 12, 12))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bcari)
+                            .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -242,6 +271,16 @@ public class Teknisi1 extends javax.swing.JPanel {
       txttelp.setText(c);
      
     }//GEN-LAST:event_tblteknisiMouseClicked
+
+    private void bcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcariActionPerformed
+        datatable();
+    }//GEN-LAST:event_bcariActionPerformed
+
+    private void txtcariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtcariKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            datatable();
+        }
+    }//GEN-LAST:event_txtcariKeyPressed
    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -278,6 +317,7 @@ public class Teknisi1 extends javax.swing.JPanel {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bcari;
     private javax.swing.JButton jButtonBatal;
     private javax.swing.JButton jButtonHapus;
     private javax.swing.JButton jButtonTambah;
@@ -287,6 +327,7 @@ public class Teknisi1 extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblteknisi;
+    private javax.swing.JTextField txtcari;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtnm;
     private javax.swing.JTextField txttelp;
