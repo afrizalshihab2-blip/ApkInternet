@@ -96,7 +96,7 @@ public class Teknisi1 extends javax.swing.JPanel {
             }
         });
 
-        tblteknisi.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        tblteknisi.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         tblteknisi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -132,6 +132,7 @@ public class Teknisi1 extends javax.swing.JPanel {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel9.setText("Nama :");
 
+        bcari.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         bcari.setText("Cari Teknisi");
         bcari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
