@@ -839,7 +839,7 @@ private void totalLangganan() {
     }//GEN-LAST:event_txtPaketInetMouseClicked
 
     private void txtPelangganMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPelangganMouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_txtPelangganMouseClicked
 
     private void txtDashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDashboardMouseClicked
