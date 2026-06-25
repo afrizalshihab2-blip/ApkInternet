@@ -341,7 +341,7 @@ private void totalLangganan() {
                         .addGap(14, 14, 14)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(22, 22, 22)
                         .addComponent(plgn)))
                 .addContainerGap(95, Short.MAX_VALUE))
         );
@@ -350,7 +350,7 @@ private void totalLangganan() {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(32, 32, 32)
+                .addGap(29, 29, 29)
                 .addComponent(plgn)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -822,7 +822,7 @@ private void totalLangganan() {
     }//GEN-LAST:event_txtTransaksiMouseClicked
 
     private void txtLanggananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtLanggananMouseClicked
-        // TODO add your handling code here:
+        switchPanel(new FormLangganan.Langganan1());
     }//GEN-LAST:event_txtLanggananMouseClicked
 
     private void txtRouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRouterMouseClicked
