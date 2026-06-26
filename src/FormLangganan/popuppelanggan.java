@@ -76,7 +76,6 @@ public class popuppelanggan extends javax.swing.JFrame {
             }
         });
 
-        bcari.setBackground(new java.awt.Color(204, 204, 204));
         bcari.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         bcari.setText("Cari");
         bcari.addActionListener(this::bcariActionPerformed);
