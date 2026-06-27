@@ -80,7 +80,7 @@ public class Teknisi11 extends javax.swing.JPanel {
         cbstatus = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel8.setText("ID Teknisi :");
@@ -197,9 +197,9 @@ public class Teknisi11 extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
                         .addComponent(jButtonTambah)
-                        .addGap(18, 18, 18)
+                        .addGap(69, 69, 69)
                         .addComponent(jButtonHapus)
-                        .addGap(18, 18, 18)
+                        .addGap(93, 93, 93)
                         .addComponent(jButtonBatal)))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
