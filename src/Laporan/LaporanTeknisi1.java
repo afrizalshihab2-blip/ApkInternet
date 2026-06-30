@@ -10,8 +10,10 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
 import java.util.HashMap;
+import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import koneksi.koneksi;
+import net.sf.jasperreports.engine.JasperExportManager;
 public class LaporanTeknisi1 extends javax.swing.JPanel {
 private Connection conn = new koneksi().connect();
 private DefaultTableModel tabmode;
@@ -112,6 +114,28 @@ private DefaultTableModel tabmode;
         JOptionPane.showMessageDialog(null, "Gagal cetak: " + ex);
     }
     }
+      public void exportPDF() {
+    try {
+        JFileChooser fc = new JFileChooser();
+        fc.setDialogTitle("Simpan PDF");
+        fc.setSelectedFile(new java.io.File("LaporanPaket.pdf"));
+        int result = fc.showSaveDialog(null);
+        
+        if (result == JFileChooser.APPROVE_OPTION) {
+            String path = fc.getSelectedFile().getAbsolutePath();
+            if (!path.endsWith(".pdf")) path += ".pdf";
+            
+            String jasperPath = "./src/Laporan/LaporanTeknisi1.jasper";
+            HashMap parameter = new HashMap();
+            JasperPrint print = JasperFillManager.fillReport(jasperPath, parameter, conn);
+            JasperExportManager.exportReportToPdfFile(print, path);
+            JOptionPane.showMessageDialog(null, "PDF berhasil disimpan!");
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Gagal export PDF: " + ex);
+    }
+}
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -131,7 +155,8 @@ private DefaultTableModel tabmode;
         jScrollPane2 = new javax.swing.JScrollPane();
         tblteknisi = new javax.swing.JTable();
         cbstatus = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        bCetak = new javax.swing.JButton();
+        bSimpan = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -261,8 +286,11 @@ private DefaultTableModel tabmode;
         cbstatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Semua", "Aktif", "Cuti" }));
         cbstatus.addActionListener(this::cbstatusActionPerformed);
 
-        jButton1.setText("Cetak");
-        jButton1.addActionListener(this::jButton1ActionPerformed);
+        bCetak.setText("Cetak");
+        bCetak.addActionListener(this::bCetakActionPerformed);
+
+        bSimpan.setText("Simpan");
+        bSimpan.addActionListener(this::bSimpanActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -279,8 +307,9 @@ private DefaultTableModel tabmode;
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(cbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton1)
-                                    .addGap(522, 522, 522))
+                                    .addComponent(bCetak)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(bSimpan))
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(36, 36, 36)
@@ -288,7 +317,7 @@ private DefaultTableModel tabmode;
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jLabel1))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,7 +332,8 @@ private DefaultTableModel tabmode;
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(bCetak)
+                    .addComponent(bSimpan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(315, Short.MAX_VALUE))
@@ -319,14 +349,19 @@ private DefaultTableModel tabmode;
     datatable();
     }//GEN-LAST:event_cbstatusActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCetakActionPerformed
     cetak();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bCetakActionPerformed
+
+    private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
+        exportPDF();
+    }//GEN-LAST:event_bSimpanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bCetak;
+    private javax.swing.JButton bSimpan;
     private javax.swing.JComboBox<String> cbstatus;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

@@ -20,25 +20,11 @@ private DefaultTableModel tabmode;
 
     public LaporanPelanggan1() {
         initComponents(); 
-        loadDashboard();
         datatable();
     }
     
 
-    private void loadDashboard() {
-    try {
-       
-        PreparedStatement ps1 = conn.prepareStatement(
-            "SELECT COUNT(*) total FROM pelanggan"
-        );
-        ResultSet rs1 = ps1.executeQuery();
-        if (rs1.next()) lbljenis.setText(String.valueOf(rs1.getInt("total")));
-
-        
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(null, "Dashboard error: " + e.getMessage());
-    }
-}
+   
  
   protected void datatable() {
     Object[] Baris = {"No", "ID Pelanggan", "Nama Pelanggan", "NO. HP", "Alamat"};
@@ -78,6 +64,27 @@ private DefaultTableModel tabmode;
         JOptionPane.showMessageDialog(null, "Gagal cetak: " + ex);
     }
     }
+    public void exportPDF() {
+    try {
+        JFileChooser fc = new JFileChooser();
+        fc.setDialogTitle("Simpan PDF");
+        fc.setSelectedFile(new java.io.File("LaporanPaket.pdf"));
+        int result = fc.showSaveDialog(null);
+        
+        if (result == JFileChooser.APPROVE_OPTION) {
+            String path = fc.getSelectedFile().getAbsolutePath();
+            if (!path.endsWith(".pdf")) path += ".pdf";
+            
+            String jasperPath = "./src/Laporan/LaporanPelanggan1.jasper";
+            HashMap parameter = new HashMap();
+            JasperPrint print = JasperFillManager.fillReport(jasperPath, parameter, conn);
+            JasperExportManager.exportReportToPdfFile(print, path);
+            JOptionPane.showMessageDialog(null, "PDF berhasil disimpan!");
+        }
+    } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Gagal export PDF: " + ex);
+    }
+}
    
  
     @SuppressWarnings("unchecked")
@@ -86,54 +93,18 @@ private DefaultTableModel tabmode;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        lbljenis = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblpelanggan = new javax.swing.JTable();
         bcetak = new javax.swing.JButton();
+        bSimpan = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(38, 50, 78));
-        jPanel2.setPreferredSize(new java.awt.Dimension(255, 149));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Total Pelanggan");
-
-        lbljenis.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        lbljenis.setForeground(new java.awt.Color(255, 255, 255));
-        lbljenis.setText("6");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(lbljenis)
-                .addContainerGap(117, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(39, 39, 39))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbljenis, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
-        );
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
-        jLabel1.setText("Laporan Paket");
+        jLabel1.setText("Laporan Pelanggan");
 
         tblpelanggan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -151,6 +122,9 @@ private DefaultTableModel tabmode;
         bcetak.setText("Cetak");
         bcetak.addActionListener(this::bcetakActionPerformed);
 
+        bSimpan.setText("Simpan");
+        bSimpan.addActionListener(this::bSimpanActionPerformed);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -158,8 +132,10 @@ private DefaultTableModel tabmode;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bcetak)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(bcetak)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bSimpan))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1007, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addContainerGap(77, Short.MAX_VALUE))
@@ -169,13 +145,13 @@ private DefaultTableModel tabmode;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(bcetak)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bcetak)
+                    .addComponent(bSimpan))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addContainerGap(486, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -187,16 +163,18 @@ private DefaultTableModel tabmode;
     cetak();
     }//GEN-LAST:event_bcetakActionPerformed
 
+    private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
+      exportPDF();
+    }//GEN-LAST:event_bSimpanActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bSimpan;
     private javax.swing.JButton bcetak;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lbljenis;
     private javax.swing.JTable tblpelanggan;
     // End of variables declaration//GEN-END:variables
 }

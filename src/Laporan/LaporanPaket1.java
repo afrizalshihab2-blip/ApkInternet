@@ -146,7 +146,7 @@ private DefaultTableModel tabmode;
         jScrollPane2 = new javax.swing.JScrollPane();
         tblpaket = new javax.swing.JTable();
         bcetak = new javax.swing.JButton();
-        bsave = new javax.swing.JButton();
+        bSimpan = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -305,8 +305,8 @@ private DefaultTableModel tabmode;
         bcetak.setText("Cetak");
         bcetak.addActionListener(this::bcetakActionPerformed);
 
-        bsave.setText("Save");
-        bsave.addActionListener(this::bsaveActionPerformed);
+        bSimpan.setText("Simpan");
+        bSimpan.addActionListener(this::bSimpanActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -318,7 +318,7 @@ private DefaultTableModel tabmode;
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(bcetak)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bsave))
+                        .addComponent(bSimpan))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -345,7 +345,7 @@ private DefaultTableModel tabmode;
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bcetak)
-                    .addComponent(bsave))
+                    .addComponent(bSimpan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(315, Short.MAX_VALUE))
@@ -360,14 +360,14 @@ private DefaultTableModel tabmode;
     cetak();
     }//GEN-LAST:event_bcetakActionPerformed
 
-    private void bsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bsaveActionPerformed
+    private void bSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSimpanActionPerformed
         exportPDF();
-    }//GEN-LAST:event_bsaveActionPerformed
+    }//GEN-LAST:event_bSimpanActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bSimpan;
     private javax.swing.JButton bcetak;
-    private javax.swing.JButton bsave;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

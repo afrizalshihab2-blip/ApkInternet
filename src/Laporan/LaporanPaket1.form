@@ -41,7 +41,7 @@
                           <Group type="102" attributes="0">
                               <Component id="bcetak" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="bsave" min="-2" max="-2" attributes="0"/>
+                              <Component id="bSimpan" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -74,7 +74,7 @@
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="bcetak" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bsave" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bSimpan" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="371" max="-2" attributes="0"/>
@@ -404,12 +404,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bcetakActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="bsave">
+            <Component class="javax.swing.JButton" name="bSimpan">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Save"/>
+                <Property name="text" type="java.lang.String" value="Simpan"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bsaveActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSimpanActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
