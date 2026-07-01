@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import koneksi.koneksi;
-
+import session.UserID;
 
 /**
  *
@@ -28,7 +28,7 @@ char defaultEcho;
     public form_login1() {
         initComponents();
     defaultEcho = jpw.getEchoChar();
-        hide.setVisible(false);
+        
           this.setLocationRelativeTo(null);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
@@ -41,18 +41,17 @@ char defaultEcho;
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanelKiri = new javax.swing.JPanel();
-        jPassword = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLogin = new javax.swing.JLabel();
-        blog = new javax.swing.JButton();
-        txtnm = new javax.swing.JTextField();
-        hide = new javax.swing.JLabel();
-        show = new javax.swing.JLabel();
-        jpw = new javax.swing.JPasswordField();
         jUsername = new javax.swing.JLabel();
-        jPanelKanan = new javax.swing.JPanel();
-        jLogo = new javax.swing.JLabel();
+        txtnm = new javax.swing.JTextField();
+        jPassword = new javax.swing.JLabel();
+        jpw = new javax.swing.JPasswordField();
+        blog = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,23 +65,22 @@ char defaultEcho;
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        jPanelKiri.setLayout(new java.awt.GridBagLayout());
 
-        jPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPassword.setForeground(new java.awt.Color(255, 255, 255));
-        jPassword.setText("Password");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLogin.setBackground(new java.awt.Color(255, 255, 255));
-        jLogin.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLogin.setForeground(new java.awt.Color(255, 255, 255));
-        jLogin.setText("LOGIN");
+        jLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLogin.setForeground(new java.awt.Color(79, 70, 229));
+        jLogin.setText("Login Page");
+        jPanel1.add(jLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1235, 93, -1, -1));
 
-        blog.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        blog.setText("Login");
-        blog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                blogActionPerformed(evt);
-            }
-        });
+        jUsername.setBackground(new java.awt.Color(0, 102, 255));
+        jUsername.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jUsername.setForeground(new java.awt.Color(51, 51, 51));
+        jUsername.setText("Username");
+        jPanel1.add(jUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 204, -1, -1));
 
         txtnm.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtnm.setForeground(new java.awt.Color(204, 204, 204));
@@ -105,20 +103,12 @@ char defaultEcho;
                 txtnmKeyPressed(evt);
             }
         });
+        jPanel1.add(txtnm, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 236, 283, 40));
 
-        hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Blind.png"))); // NOI18N
-        hide.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                hideMouseClicked(evt);
-            }
-        });
-
-        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Eye.png"))); // NOI18N
-        show.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                showMouseClicked(evt);
-            }
-        });
+        jPassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPassword.setForeground(new java.awt.Color(51, 51, 51));
+        jPassword.setText("Password");
+        jPanel1.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 294, -1, -1));
 
         jpw.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jpw.setForeground(new java.awt.Color(204, 204, 204));
@@ -140,79 +130,65 @@ char defaultEcho;
                 jpwKeyPressed(evt);
             }
         });
+        jPanel1.add(jpw, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 326, 283, 40));
 
-        jUsername.setBackground(new java.awt.Color(0, 0, 0));
-        jUsername.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jUsername.setForeground(new java.awt.Color(255, 255, 255));
-        jUsername.setText("Username");
+        blog.setBackground(new java.awt.Color(79, 70, 229));
+        blog.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        blog.setForeground(new java.awt.Color(255, 255, 255));
+        blog.setText("Masuk");
+        blog.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                blogActionPerformed(evt);
+            }
+        });
+        jPanel1.add(blog, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 394, 236, 41));
 
-        jPanelKanan.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelKanan.setLayout(new java.awt.BorderLayout());
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Putra.Net3.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 84, 285, 114));
 
-        jLogo.setBackground(new java.awt.Color(102, 204, 255));
-        jPanelKanan.add(jLogo, java.awt.BorderLayout.CENTER);
-
-        javax.swing.GroupLayout jPanelKiriLayout = new javax.swing.GroupLayout(jPanelKiri);
-        jPanelKiri.setLayout(jPanelKiriLayout);
-        jPanelKiriLayout.setHorizontalGroup(
-            jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelKiriLayout.createSequentialGroup()
-                .addGroup(jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelKiriLayout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addGroup(jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelKiriLayout.createSequentialGroup()
-                                .addComponent(jpw, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addGroup(jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(hide)
-                                    .addComponent(show)))
-                            .addComponent(jUsername)
-                            .addComponent(txtnm, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPassword)))
-                    .addGroup(jPanelKiriLayout.createSequentialGroup()
-                        .addGap(157, 157, 157)
-                        .addComponent(jLogin))
-                    .addGroup(jPanelKiriLayout.createSequentialGroup()
-                        .addGap(175, 175, 175)
-                        .addComponent(blog, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(96, 96, 96)
-                .addComponent(jPanelKanan, javax.swing.GroupLayout.DEFAULT_SIZE, 1111, Short.MAX_VALUE))
-        );
-        jPanelKiriLayout.setVerticalGroup(
-            jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelKanan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanelKiriLayout.createSequentialGroup()
-                .addGap(286, 286, 286)
-                .addComponent(jLogin)
-                .addGap(25, 25, 25)
-                .addComponent(jUsername)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtnm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14)
-                .addComponent(jPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jpw, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelKiriLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(jPanelKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(hide)
-                            .addComponent(show))))
-                .addGap(18, 18, 18)
-                .addComponent(blog)
-                .addContainerGap(357, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = -908;
+        gridBagConstraints.ipady = 132;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(140, 263, 126, 267);
+        jPanelKiri.add(jPanel1, gridBagConstraints);
 
         getContentPane().add(jPanelKiri, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(1615, 944));
+        setSize(new java.awt.Dimension(948, 848));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPanelKiriAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanelKiriAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanelKiriAncestorAdded
+
+    private void blogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blogActionPerformed
+        // TODO add your handling code here:
+        try {
+            String sql = "SELECT * FROM admin WHERE admin=? AND password=?";
+            PreparedStatement pst = conn.prepareStatement(sql);
+
+            pst.setString(1, txtnm.getText());
+            pst.setString(2, jpw.getText());
+
+            ResultSet hasil = pst.executeQuery();
+            if (hasil.next()) {
+                UserID.setUserLogin(hasil.getString("admin"));
+                JOptionPane.showMessageDialog(this, "Login berhasil");
+                this.setVisible(false);
+                new Dashboard.Dashboard1().setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Username dan password salah");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Login gagal: " + e.getMessage());
+        }
+    }//GEN-LAST:event_blogActionPerformed
 
     private void jpwKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jpwKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -237,18 +213,6 @@ char defaultEcho;
         }
     }//GEN-LAST:event_jpwFocusGained
 
-    private void showMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_showMouseClicked
-        show.setVisible(false);
-        hide.setVisible(true);
-        jpw.setEchoChar((char)0);
-    }//GEN-LAST:event_showMouseClicked
-
-    private void hideMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_hideMouseClicked
-        show.setVisible(true);
-        hide.setVisible(false);
-        jpw.setEchoChar(defaultEcho);
-    }//GEN-LAST:event_hideMouseClicked
-
     private void txtnmKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnmKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             jpw.requestFocus();
@@ -271,30 +235,6 @@ char defaultEcho;
         }
     }//GEN-LAST:event_txtnmFocusGained
 
-    private void blogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blogActionPerformed
-        // TODO add your handling code here:
-        try {
-            String sql = "SELECT * FROM admin WHERE admin=? AND password=?";
-            PreparedStatement pst = conn.prepareStatement(sql);
-
-            pst.setString(1, txtnm.getText());
-            pst.setString(2, jpw.getText());
-
-            ResultSet hasil = pst.executeQuery();
-            if (hasil.next()) {
-
-                JOptionPane.showMessageDialog(this, "Login berhasil");
-                this.setVisible(false);
-                new Dashboard.Dashboard1().setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(this, "Username dan password salah");
-            }
-
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Login gagal: " + e.getMessage());
-        }
-    }//GEN-LAST:event_blogActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -306,15 +246,13 @@ char defaultEcho;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton blog;
-    private javax.swing.JLabel hide;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLogin;
-    private javax.swing.JLabel jLogo;
-    private javax.swing.JPanel jPanelKanan;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelKiri;
     private javax.swing.JLabel jPassword;
     private javax.swing.JLabel jUsername;
     private javax.swing.JPasswordField jpw;
-    private javax.swing.JLabel show;
     private javax.swing.JTextField txtnm;
     // End of variables declaration//GEN-END:variables
 }

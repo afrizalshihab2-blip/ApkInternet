@@ -65,45 +65,32 @@ protected void kosong(){
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         jLstok = new javax.swing.JLabel();
-        btnHapus = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtip = new javax.swing.JTextField();
-        btnBatal = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblRouter = new javax.swing.JTable();
         txtNama = new javax.swing.JTextField();
         jLidrouter = new javax.swing.JLabel();
-        btnTambah = new javax.swing.JButton();
         jLnama = new javax.swing.JLabel();
-        btnUbah = new javax.swing.JButton();
         bcari = new javax.swing.JButton();
         txtcari = new javax.swing.JTextField();
         cbstatus = new javax.swing.JComboBox<>();
+        btnTambah = new javax.swing.JButton();
+        btnHapus = new javax.swing.JButton();
+        btnBatal = new javax.swing.JButton();
+        btnUbah = new javax.swing.JButton();
 
         setLayout(new java.awt.GridLayout(1, 0));
 
-        jLstok.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLstok.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLstok.setText("Status");
 
-        btnHapus.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnHapus.setText("Hapus");
-        btnHapus.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnHapus.setPreferredSize(new java.awt.Dimension(56, 22));
-        btnHapus.addActionListener(this::btnHapusActionPerformed);
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(79, 70, 229));
         jLabel1.setText("Daftar Router");
 
-        btnBatal.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnBatal.setText("Batal");
-        btnBatal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnBatal.setMaximumSize(new java.awt.Dimension(56, 22));
-        btnBatal.setMinimumSize(new java.awt.Dimension(56, 22));
-        btnBatal.setPreferredSize(new java.awt.Dimension(56, 22));
-        btnBatal.setSelected(true);
-        btnBatal.addActionListener(this::btnBatalActionPerformed);
-
-        tblRouter.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         tblRouter.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -125,27 +112,15 @@ protected void kosong(){
         });
         jScrollPane2.setViewportView(tblRouter);
 
-        jLidrouter.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        txtNama.addActionListener(this::txtNamaActionPerformed);
+
+        jLidrouter.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLidrouter.setText("IP Address");
 
-        btnTambah.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnTambah.setText("Tambah");
-        btnTambah.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnTambah.setPreferredSize(new java.awt.Dimension(56, 22));
-        btnTambah.addActionListener(this::btnTambahActionPerformed);
-
-        jLnama.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLnama.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLnama.setText("Tipe Router");
 
-        btnUbah.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnUbah.setText("Ubah");
-        btnUbah.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        btnUbah.setMaximumSize(new java.awt.Dimension(56, 22));
-        btnUbah.setMinimumSize(new java.awt.Dimension(56, 22));
-        btnUbah.setPreferredSize(new java.awt.Dimension(56, 22));
-        btnUbah.setSelected(true);
-        btnUbah.addActionListener(this::btnUbahActionPerformed);
-
+        bcari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Search_3.png"))); // NOI18N
         bcari.setText("Cari");
         bcari.addActionListener(this::bcariActionPerformed);
 
@@ -159,105 +134,87 @@ protected void kosong(){
         cbstatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aktif", "Nonaktif", " " }));
         cbstatus.addActionListener(this::cbstatusActionPerformed);
 
+        btnTambah.setText("Tambah");
+
+        btnHapus.setText("Hapus");
+
+        btnBatal.setText("Batal");
+
+        btnUbah.setText("Ubah");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                             .addComponent(jLnama)
-                            .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLidrouter)
-                            .addComponent(txtip, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(143, 143, 143))
+                            .addGap(528, 528, 528))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtNama)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLstok)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnTambah)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnHapus)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBatal)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUbah))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLidrouter)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnUbah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cbstatus, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(bcari)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtcari))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLstok)
-                                    .addGap(249, 249, 249))))
-                        .addGap(95, 95, 95))))
+                                .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bcari))
+                            .addComponent(txtip, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(862, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLnama)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLidrouter)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtip, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLstok)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtip)))
                 .addGap(18, 18, 18)
-                .addComponent(cbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addComponent(jLstok)
+                .addGap(1, 1, 1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bcari)
-                    .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBatal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUbah, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(btnTambah)
+                    .addComponent(btnHapus)
+                    .addComponent(btnBatal)
+                    .addComponent(btnUbah))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(jPanel1);
 
         add(jScrollPane1);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        int ok = JOptionPane.showConfirmDialog(null, "hapus", "konfirmasi dialog", JOptionPane.YES_NO_OPTION);
-        if (ok == 0) {
-            String sql = "delete from router where ip_address ='" + txtip.getText() + "'";
-            try {
-                PreparedStatement stat = conn.prepareStatement(sql);
-                stat.executeUpdate();
-                JOptionPane.showMessageDialog(null, "data berhasil dihapus");
-                kosong();
-                txtip.requestFocus();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "data gagal dihapus" + e);
-            }
-            datatable();
-        }
-    }//GEN-LAST:event_btnHapusActionPerformed
-
-    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
-        kosong();
-        datatable();
-    }//GEN-LAST:event_btnBatalActionPerformed
 
     private void tblRouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblRouterMouseClicked
         int bar = tblRouter.getSelectedRow();
@@ -269,45 +226,6 @@ protected void kosong(){
         txtNama.setText(b);
         cbstatus.setSelectedItem(c);
     }//GEN-LAST:event_tblRouterMouseClicked
-
-    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-
-        String sql = "insert into router(ip_address, tipe_router, status) values (?,?,?)";
-        try {
-            PreparedStatement stat = conn.prepareStatement(sql);
-            stat.setString(1, txtip.getText());
-            stat.setString(2, txtNama.getText());
-            stat.setString(3, cbstatus.getSelectedItem().toString());
-
-            stat.executeUpdate();
-            JOptionPane.showMessageDialog(null, "data berhasil disimpan");
-            kosong();
-            txtip.requestFocus();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "data gagal disimpan" + e);
-        }
-        datatable();
-    }//GEN-LAST:event_btnTambahActionPerformed
-
-    private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
-        try {
-            String sql = "update router set ip_address=?, status=? where  tipe_router=?";
-            PreparedStatement stat = conn.prepareStatement(sql);
-
-            stat.setString(1, txtip.getText());
-            stat.setString(2, cbstatus.getSelectedItem().toString());
-            stat.setString(3, txtNama.getText());
-
-            stat.executeUpdate();
-            JOptionPane.showMessageDialog(null, "data berhasil diubah");
-            kosong();
-            txtip.requestFocus();
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "data gagal diubah" + e);
-        }
-        datatable();
-
-    }//GEN-LAST:event_btnUbahActionPerformed
 
     private void bcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcariActionPerformed
         datatable();
@@ -322,6 +240,10 @@ protected void kosong(){
     private void cbstatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbstatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbstatusActionPerformed
+
+    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNamaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -61,18 +61,18 @@ ORDER BY tgl_bayar ASC]]>
 				<reportElement x="0" y="0" width="660" height="166" backcolor="#26324E" uuid="ca0590ec-c0c9-4f07-990b-9c13f15d7643"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="108" y="28" width="451" height="49" forecolor="#000000" uuid="4f14e280-a5ff-4066-908c-fc7909b2afe1"/>
+				<reportElement x="108" y="28" width="451" height="49" forecolor="#FFFFFF" uuid="4f14e280-a5ff-4066-908c-fc7909b2afe1"/>
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="30" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PUTRA.NET]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="95" y="98" width="474" height="37" forecolor="#000000" uuid="3a9470f0-d03a-43fe-9942-4bec9e73ed79"/>
+				<reportElement x="95" y="77" width="474" height="37" forecolor="#FFFFFF" uuid="3a9470f0-d03a-43fe-9942-4bec9e73ed79"/>
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="18"/>
 				</textElement>
-				<text><![CDATA[Penyedia Jasa Layanan Internet]]></text>
+				<text><![CDATA[Jasa Layanan Internet]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -93,7 +93,7 @@ ORDER BY tgl_bayar ASC]]>
 				<text><![CDATA[Bulan: ]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="301" y="87" width="111" height="20" forecolor="#000000" uuid="c4221e45-edf2-4952-9ccd-952e6d661f12"/>
+				<reportElement x="301" y="72" width="111" height="35" forecolor="#000000" uuid="c4221e45-edf2-4952-9ccd-952e6d661f12"/>
 				<textElement>
 					<font fontName="Segoe UI" size="24" isBold="true"/>
 				</textElement>
@@ -346,7 +346,7 @@ ORDER BY tgl_bayar ASC]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Segoe UI" size="13"/>
 				</textElement>
-				<text><![CDATA[Mengetahui,]]></text>
+				<text><![CDATA[Mengetahui.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="469" y="170" width="100" height="32" uuid="7e9d2759-74c2-4c38-95af-e457f20bd42b"/>

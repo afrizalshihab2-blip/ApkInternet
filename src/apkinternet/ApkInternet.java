@@ -30,15 +30,14 @@ public class ApkInternet {
         UIManager.put("Component.innerFocusWidth", 1);
         UIManager.put("TextComponent.margin", new java.awt.Insets(8, 10, 8, 10));
         
-        UIManager.put("Button.arc", 20); // sudut rounded
+        UIManager.put("Button.arc", 20); 
         UIManager.put("Component.arc", 15);
 
         UIManager.put("Button.focusWidth", 2);
         UIManager.put("Button.innerFocusWidth", 1);
 
-        UIManager.put("Button.borderWidth", 0); // hilangin border jadul
-
-        UIManager.put("Button.background", new java.awt.Color(79, 70, 229)); // warna utama (ungu modern)
+        UIManager.put("Button.borderWidth", 0); 
+        UIManager.put("Button.background", new java.awt.Color(79, 70, 229)); 
         UIManager.put("Button.foreground", java.awt.Color.WHITE);
 
         UIManager.put("Button.hoverBackground", new java.awt.Color(99, 102, 241));

@@ -36,18 +36,18 @@ FROM
 				<reportElement x="0" y="0" width="660" height="166" backcolor="#26324E" uuid="5166969a-843f-453f-923d-a49da1c79ef9"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="111" y="48" width="451" height="49" forecolor="#000000" uuid="5561e423-fc58-4516-92a7-806697792f17"/>
+				<reportElement x="111" y="48" width="451" height="49" forecolor="#FFFFFF" uuid="5561e423-fc58-4516-92a7-806697792f17"/>
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="30" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PUTRA.NET]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="98" y="118" width="474" height="37" forecolor="#000000" uuid="3af01b38-d95f-45ef-a7a5-add79ea8654c"/>
+				<reportElement x="98" y="97" width="474" height="37" forecolor="#FFFFFF" uuid="3af01b38-d95f-45ef-a7a5-add79ea8654c"/>
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="18"/>
 				</textElement>
-				<text><![CDATA[Penyedia Jasa Layanan Internet]]></text>
+				<text><![CDATA[Jasa Layanan Internet]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -230,11 +230,11 @@ FROM
 				<text><![CDATA[Jakarta,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="462" y="153" width="100" height="27" uuid="705458de-79fe-4b59-bf23-475e8d5c2593"/>
+				<reportElement x="462" y="163" width="100" height="27" uuid="705458de-79fe-4b59-bf23-475e8d5c2593"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Segoe UI" size="13"/>
 				</textElement>
-				<text><![CDATA[Mengetahui,]]></text>
+				<text><![CDATA[Mengetahui.]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="442" y="32" width="130" height="30" uuid="bb03b290-5959-4563-a0be-5bd618f2f4c2"/>

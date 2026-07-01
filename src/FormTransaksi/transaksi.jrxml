@@ -41,17 +41,14 @@ WHERE id_transaksi = $P{id_transaksi}]]>
 				<reportElement x="0" y="0" width="555" height="90" backcolor="#26324E" uuid="84652128-038f-43be-8f83-f3ec9405cf59"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="230" y="5" width="144" height="39" forecolor="#FFFFFF" uuid="33fae9e2-8997-4526-82a0-c5939b8d6652"/>
+				<reportElement x="199" y="0" width="144" height="39" forecolor="#FFFFFF" uuid="33fae9e2-8997-4526-82a0-c5939b8d6652"/>
 				<textElement>
 					<font fontName="Segoe UI" size="24" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PUTRA.NET]]></text>
 			</staticText>
-			<image>
-				<reportElement x="23" y="13" width="98" height="50" uuid="3952488d-fed4-4457-a33e-fd625bac6563"/>
-			</image>
 			<staticText>
-				<reportElement x="174" y="52" width="266" height="31" forecolor="#FFFFFF" uuid="df8c49b0-1167-4307-8a0f-00a2fb01582c"/>
+				<reportElement x="134" y="39" width="266" height="31" forecolor="#FFFFFF" uuid="df8c49b0-1167-4307-8a0f-00a2fb01582c"/>
 				<textElement>
 					<font fontName="Segoe UI" size="18"/>
 				</textElement>

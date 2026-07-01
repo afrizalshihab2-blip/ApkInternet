@@ -44,17 +44,21 @@ public class MenuLaporan extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(11, 26, 51));
 
+        Lppelanggan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lppelanggan.setText("Laporan Pelanggan");
         Lppelanggan.addActionListener(this::LppelangganActionPerformed);
 
+        Lppaket.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lppaket.setText("Laporan Paket");
         Lppaket.addActionListener(this::LppaketActionPerformed);
 
+        Lpteknisi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lpteknisi.setText("Laporan Teknisi");
         Lpteknisi.addActionListener(this::LpteknisiActionPerformed);
 
+        Lppendapatan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         Lppendapatan.setText("Laporan Pendapatan");
         Lppendapatan.addActionListener(this::LppendapatanActionPerformed);
 
@@ -63,26 +67,26 @@ public class MenuLaporan extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(19, 19, 19)
                 .addComponent(Lppelanggan)
-                .addGap(48, 48, 48)
-                .addComponent(Lppaket)
-                .addGap(37, 37, 37)
-                .addComponent(Lpteknisi)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
+                .addComponent(Lppaket, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Lpteknisi, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(Lppendapatan)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addContainerGap(795, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lppelanggan)
-                    .addComponent(Lppaket)
-                    .addComponent(Lpteknisi)
-                    .addComponent(Lppendapatan))
-                .addContainerGap(63, Short.MAX_VALUE))
+                    .addComponent(Lppelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lppaket, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lpteknisi, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Lppendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);

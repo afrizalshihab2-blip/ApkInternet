@@ -44,18 +44,18 @@ ORDER BY t.nama ASC]]>
 				<reportElement x="0" y="0" width="660" height="166" backcolor="#26324E" uuid="a1365d97-5d78-42a7-b866-b8921a58c595"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="118" y="38" width="451" height="49" forecolor="#000000" uuid="71b23376-eacc-401a-a237-8494976554e7"/>
+				<reportElement x="118" y="38" width="451" height="49" forecolor="#FFFFFF" uuid="71b23376-eacc-401a-a237-8494976554e7"/>
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="30" isBold="true"/>
 				</textElement>
 				<text><![CDATA[PUTRA.NET]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="105" y="108" width="474" height="37" forecolor="#000000" uuid="ae69719d-6d65-43d1-b9d2-0d96b8640884"/>
+				<reportElement x="105" y="87" width="474" height="37" forecolor="#FFFFFF" uuid="ae69719d-6d65-43d1-b9d2-0d96b8640884"/>
 				<textElement textAlignment="Center">
 					<font fontName="Segoe UI" size="18"/>
 				</textElement>
-				<text><![CDATA[Penyedia Jasa Layanan Internet]]></text>
+				<text><![CDATA[Jasa Layanan Internet]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -270,7 +270,7 @@ ORDER BY t.nama ASC]]>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Segoe UI" size="13"/>
 				</textElement>
-				<text><![CDATA[Mengetahui,]]></text>
+				<text><![CDATA[Mengetahui.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="412" y="72" width="70" height="31" uuid="818e7453-690e-417f-a7c0-b81486746066"/>

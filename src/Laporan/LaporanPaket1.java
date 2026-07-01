@@ -152,14 +152,14 @@ private DefaultTableModel tabmode;
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(38, 50, 78));
+        jPanel2.setBackground(new java.awt.Color(11, 26, 51));
         jPanel2.setPreferredSize(new java.awt.Dimension(255, 149));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Jenis Paket");
 
-        lbljenis.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lbljenis.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         lbljenis.setForeground(new java.awt.Color(255, 255, 255));
         lbljenis.setText("6");
 
@@ -168,33 +168,29 @@ private DefaultTableModel tabmode;
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(lbljenis)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(lbljenis))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbljenis, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbljenis)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(38, 50, 78));
+        jPanel3.setBackground(new java.awt.Color(11, 26, 51));
         jPanel3.setPreferredSize(new java.awt.Dimension(255, 149));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Total pelanggan");
 
-        lbltotalpel.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lbltotalpel.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         lbltotalpel.setForeground(new java.awt.Color(255, 255, 255));
         lbltotalpel.setText("6");
 
@@ -203,33 +199,29 @@ private DefaultTableModel tabmode;
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(105, 105, 105)
-                        .addComponent(lbltotalpel))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel4)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addComponent(lbltotalpel))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbltotalpel, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addComponent(lbltotalpel)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(38, 50, 78));
+        jPanel4.setBackground(new java.awt.Color(11, 26, 51));
         jPanel4.setPreferredSize(new java.awt.Dimension(255, 149));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Paket Populer");
 
-        lblterpopuler.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lblterpopuler.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         lblterpopuler.setForeground(new java.awt.Color(255, 255, 255));
         lblterpopuler.setText("6");
 
@@ -238,30 +230,29 @@ private DefaultTableModel tabmode;
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblterpopuler)
-                    .addComponent(jLabel6))
-                .addContainerGap(54, Short.MAX_VALUE))
+                    .addComponent(jLabel6)
+                    .addComponent(lblterpopuler))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblterpopuler, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblterpopuler)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(38, 50, 78));
+        jPanel5.setBackground(new java.awt.Color(11, 26, 51));
         jPanel5.setPreferredSize(new java.awt.Dimension(255, 149));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Harga Tertinggi");
 
-        lbltertinggi.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        lbltertinggi.setFont(new java.awt.Font("Segoe UI", 1, 40)); // NOI18N
         lbltertinggi.setForeground(new java.awt.Color(255, 255, 255));
         lbltertinggi.setText("6");
 
@@ -270,23 +261,23 @@ private DefaultTableModel tabmode;
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbltertinggi)
-                    .addComponent(jLabel8))
-                .addContainerGap(57, Short.MAX_VALUE))
+                    .addComponent(jLabel8)
+                    .addComponent(lbltertinggi))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbltertinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addComponent(lbltertinggi)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(79, 70, 229));
         jLabel1.setText("Laporan Paket");
 
         tblpaket.setModel(new javax.swing.table.DefaultTableModel(
@@ -302,6 +293,7 @@ private DefaultTableModel tabmode;
         ));
         jScrollPane2.setViewportView(tblpaket);
 
+        bcetak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Print_1.png"))); // NOI18N
         bcetak.setText("Cetak");
         bcetak.addActionListener(this::bcetakActionPerformed);
 

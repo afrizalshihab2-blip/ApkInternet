@@ -104,6 +104,7 @@ private DefaultTableModel tabmode;
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(79, 70, 229));
         jLabel1.setText("Laporan Pelanggan");
 
         tblpelanggan.setModel(new javax.swing.table.DefaultTableModel(
@@ -119,6 +120,7 @@ private DefaultTableModel tabmode;
         ));
         jScrollPane2.setViewportView(tblpelanggan);
 
+        bcetak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Print_1.png"))); // NOI18N
         bcetak.setText("Cetak");
         bcetak.addActionListener(this::bcetakActionPerformed);
 
