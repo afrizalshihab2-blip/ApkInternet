@@ -528,19 +528,82 @@ private DefaultTableModel tabmode;
     }//GEN-LAST:event_bcariActionPerformed
 
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        // TODO add your handling code here:
+         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String tgl = sdf.format(jtgl.getDate());
+
+        String sql = "insert into langganan values (?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, txtidlangg.getText());
+            stat.setString(2, txtnama.getText());
+            stat.setString(3, tgl);
+            stat.setString(4, cbpaket.getSelectedItem().toString());
+            stat.setString(5, txtharga.getText());
+            stat.setString(6, cbteknisi.getSelectedItem().toString());
+            stat.setString(7, cbrouter.getSelectedItem().toString());
+
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "data berhasil disimpan");
+
+            kosong();
+            autonumber();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "data gagal disimpan" + e);
+        }
+        datatable();
+
     }//GEN-LAST:event_btnSimpanActionPerformed
 
     private void btnUbah1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbah1ActionPerformed
-        // TODO add your handling code here:
+         if (txtidlangg.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Pilih data di tabel dulu!");
+            return;
+        }
+
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String tgl = sdf.format(jtgl.getDate());
+
+            String sql = "UPDATE langganan SET tanggal=?, nama_paket=?, harga=?, nama=?, tipe_router=? WHERE id_langganan=?";
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, tgl);
+            stat.setString(2, cbpaket.getSelectedItem().toString());
+            stat.setString(3, txtharga.getText());
+            stat.setString(4, cbteknisi.getSelectedItem().toString());
+            stat.setString(5, cbrouter.getSelectedItem().toString());
+            stat.setString(6, txtidlangg.getText());
+
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Data berhasil diubah");
+
+            kosong();
+            autonumber();
+            datatable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error: " + e);
+        }
     }//GEN-LAST:event_btnUbah1ActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
-        // TODO add your handling code here:
+         int ok = JOptionPane.showConfirmDialog(null, "hapus", "konfirmasi dialog", JOptionPane.YES_NO_OPTION);
+        if (ok == 0) {
+            String sql = "delete from langganan where id_langganan ='" + txtidlangg.getText() + "'";
+            try {
+                PreparedStatement stat = conn.prepareStatement(sql);
+                stat.executeUpdate();
+                JOptionPane.showMessageDialog(null, "data berhasil dihapus");
+                kosong();
+                autonumber();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "data gagal dihapus" + e);
+            }
+            datatable();
+        }
     }//GEN-LAST:event_btnHapusActionPerformed
 
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
-        // TODO add your handling code here:
+       kosong();
+        datatable();
     }//GEN-LAST:event_btnBatalActionPerformed
 
 
