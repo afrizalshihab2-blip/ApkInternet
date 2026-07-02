@@ -230,21 +230,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Hapus"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bhapusActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bbatal">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Batal"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bbatalActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="bubah">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ubah"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bubahActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btambah">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Tambah"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btambahActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

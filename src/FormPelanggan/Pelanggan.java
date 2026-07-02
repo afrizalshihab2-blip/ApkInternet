@@ -142,12 +142,16 @@ protected void datatable(){
         bcari.addActionListener(this::bcariActionPerformed);
 
         bhapus.setText("Hapus");
+        bhapus.addActionListener(this::bhapusActionPerformed);
 
         bbatal.setText("Batal");
+        bbatal.addActionListener(this::bbatalActionPerformed);
 
         bubah.setText("Ubah");
+        bubah.addActionListener(this::bubahActionPerformed);
 
         btambah.setText("Tambah");
+        btambah.addActionListener(this::btambahActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -254,6 +258,100 @@ protected void datatable(){
     private void bcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcariActionPerformed
         datatable();
     }//GEN-LAST:event_bcariActionPerformed
+
+    private void btambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btambahActionPerformed
+        try {
+
+            String sql =
+            "INSERT INTO pelanggan " +
+            "(id_pelanggan,nama_pel,no_hp,alamat) " +
+            "VALUES (?,?,?,?)";
+
+            PreparedStatement stat = conn.prepareStatement(sql);
+
+            stat.setString(1, txtid.getText());
+            stat.setString(2, txtnama.getText());
+            stat.setString(3, txtno.getText());
+            stat.setString(4, txtalamat.getText());
+
+            stat.executeUpdate();
+
+            JOptionPane.showMessageDialog(null,
+                "Data berhasil disimpan");
+
+            kosong();
+            datatable();
+
+        } catch(Exception e){
+            JOptionPane.showMessageDialog(null,
+                "Data gagal disimpan : "+e);
+        }
+    }//GEN-LAST:event_btambahActionPerformed
+
+    private void bubahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bubahActionPerformed
+        try {
+
+        String sql = "UPDATE pelanggan SET "
+                + "nama_pel=?, "
+                + "no_hp=?, "
+                + "alamat=? "
+                + "WHERE id_pelanggan=?";
+
+        PreparedStatement stat = conn.prepareStatement(sql);
+
+        stat.setString(1, txtnama.getText());
+        stat.setString(2, txtno.getText());
+        stat.setString(3, txtalamat.getText());
+        stat.setString(4, txtid.getText());
+
+        stat.executeUpdate();
+
+        JOptionPane.showMessageDialog(null,
+                "Data berhasil diubah");
+
+        kosong();
+        datatable();
+
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null,
+                "Data gagal diubah : " + e);
+    }
+    }//GEN-LAST:event_bubahActionPerformed
+
+    private void bhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bhapusActionPerformed
+         int row = tblplgn.getSelectedRow();
+
+        if(row == -1){
+            JOptionPane.showMessageDialog(null,"Pilih data di tabel dulu!");
+            return;
+        }
+
+        String id = tblplgn.getValueAt(row, 0).toString();
+
+        int ok = JOptionPane.showConfirmDialog(null,"Hapus data?","Konfirmasi",JOptionPane.YES_NO_OPTION);
+
+        if(ok==0){
+            try{
+                String sql = "DELETE FROM pelanggan WHERE id_pelanggan=?";
+                PreparedStatement stat = conn.prepareStatement(sql);
+                stat.setString(1, id);
+                stat.executeUpdate();
+
+                JOptionPane.showMessageDialog(null,"Data berhasil dihapus");
+                kosong();
+                datatable();
+
+            } catch(Exception e){
+                JOptionPane.showMessageDialog(null,"Data gagal dihapus: "+e);
+            }
+
+        }
+    }//GEN-LAST:event_bhapusActionPerformed
+
+    private void bbatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bbatalActionPerformed
+        kosong();
+        datatable();
+    }//GEN-LAST:event_bbatalActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
