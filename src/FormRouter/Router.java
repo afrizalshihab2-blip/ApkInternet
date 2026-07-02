@@ -135,12 +135,16 @@ protected void kosong(){
         cbstatus.addActionListener(this::cbstatusActionPerformed);
 
         btnTambah.setText("Tambah");
+        btnTambah.addActionListener(this::btnTambahActionPerformed);
 
         btnHapus.setText("Hapus");
+        btnHapus.addActionListener(this::btnHapusActionPerformed);
 
         btnBatal.setText("Batal");
+        btnBatal.addActionListener(this::btnBatalActionPerformed);
 
         btnUbah.setText("Ubah");
+        btnUbah.addActionListener(this::btnUbahActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,7 +180,7 @@ protected void kosong(){
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(bcari))
                             .addComponent(txtip, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(862, Short.MAX_VALUE))
+                .addContainerGap(852, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,6 +248,64 @@ protected void kosong(){
     private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNamaActionPerformed
+
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+        String sql = "insert into router(ip_address, tipe_router, status) values (?,?,?)";
+        try {
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, txtip.getText());
+            stat.setString(2, txtNama.getText());
+            stat.setString(3, cbstatus.getSelectedItem().toString());
+
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "data berhasil disimpan");
+            kosong();
+            txtip.requestFocus();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "data gagal disimpan" + e);
+        }
+        datatable();
+    }//GEN-LAST:event_btnTambahActionPerformed
+
+    private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
+        int ok = JOptionPane.showConfirmDialog(null, "hapus", "konfirmasi dialog", JOptionPane.YES_NO_OPTION);
+        if (ok == 0) {
+            String sql = "delete from router where ip_address ='" + txtip.getText() + "'";
+            try {
+                PreparedStatement stat = conn.prepareStatement(sql);
+                stat.executeUpdate();
+                JOptionPane.showMessageDialog(null, "data berhasil dihapus");
+                kosong();
+                txtip.requestFocus();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "data gagal dihapus" + e);
+            }
+            datatable();
+        }
+    }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
+        kosong();
+        datatable();
+    }//GEN-LAST:event_btnBatalActionPerformed
+
+    private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
+        try {
+            String sql = "update router set tipe_router=?, status=? where  ip_address=?";
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, txtNama.getText());
+            stat.setString(2, cbstatus.getSelectedItem().toString());
+            stat.setString(3, txtip.getText());
+
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "data berhasil diubah");
+            kosong();
+            txtip.requestFocus();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "data gagal diubah" + e);
+        }
+        datatable();
+    }//GEN-LAST:event_btnUbahActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
