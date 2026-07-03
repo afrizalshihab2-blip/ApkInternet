@@ -101,11 +101,13 @@ private DefaultTableModel tabmode;
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(11, 20, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(79, 70, 229));
+        jLabel1.setForeground(new java.awt.Color(0, 255, 204));
         jLabel1.setText("Laporan Pelanggan");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 30, -1, 57));
 
         tblpelanggan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,41 +122,16 @@ private DefaultTableModel tabmode;
         ));
         jScrollPane2.setViewportView(tblpelanggan);
 
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 134, 1007, 371));
+
         bcetak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Print_1.png"))); // NOI18N
         bcetak.setText("Cetak");
         bcetak.addActionListener(this::bcetakActionPerformed);
+        jPanel1.add(bcetak, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 93, -1, -1));
 
         bSimpan.setText("Simpan");
         bSimpan.addActionListener(this::bSimpanActionPerformed);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(bcetak)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(bSimpan))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1007, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(77, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bcetak)
-                    .addComponent(bSimpan))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(486, Short.MAX_VALUE))
-        );
+        jPanel1.add(bSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 93, -1, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 

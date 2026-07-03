@@ -46,20 +46,24 @@ public class MenuLaporan extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(11, 26, 51));
 
-        Lppelanggan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Lppelanggan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lppelanggan.setText("Laporan Pelanggan");
+        Lppelanggan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lppelanggan.addActionListener(this::LppelangganActionPerformed);
 
-        Lppaket.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Lppaket.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lppaket.setText("Laporan Paket");
+        Lppaket.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lppaket.addActionListener(this::LppaketActionPerformed);
 
-        Lpteknisi.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Lpteknisi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lpteknisi.setText("Laporan Teknisi");
+        Lpteknisi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lpteknisi.addActionListener(this::LpteknisiActionPerformed);
 
-        Lppendapatan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        Lppendapatan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lppendapatan.setText("Laporan Pendapatan");
+        Lppendapatan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lppendapatan.addActionListener(this::LppendapatanActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -68,14 +72,14 @@ public class MenuLaporan extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(Lppelanggan)
-                .addGap(18, 18, 18)
-                .addComponent(Lppaket, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Lpteknisi, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Lppendapatan)
-                .addContainerGap(795, Short.MAX_VALUE))
+                .addComponent(Lppelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(Lppaket, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(Lpteknisi, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(Lppendapatan, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(635, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

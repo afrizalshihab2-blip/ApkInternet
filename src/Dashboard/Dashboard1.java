@@ -44,6 +44,11 @@ public class Dashboard1 extends javax.swing.JFrame {
     public Dashboard1() {
         initComponents();
         
+        this.setLocationRelativeTo(null);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        
+        
         PanelDashboard.addMouseListener(new java.awt.event.MouseAdapter() {
     public void mouseClicked(java.awt.event.MouseEvent evt) {
         moveIndicator(PanelDashboard);
@@ -244,7 +249,7 @@ public class Dashboard1 extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        FrameKiri.setBackground(new java.awt.Color(11, 20, 51));
+        FrameKiri.setBackground(new java.awt.Color(15, 23, 42));
         FrameKiri.setForeground(new java.awt.Color(255, 204, 0));
         FrameKiri.setPreferredSize(new java.awt.Dimension(200, 562));
 
@@ -528,17 +533,16 @@ public class Dashboard1 extends javax.swing.JFrame {
         FrameKiri.setLayout(FrameKiriLayout);
         FrameKiriLayout.setHorizontalGroup(
             FrameKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FrameKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(FrameKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(PanelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(PanelPelanggan, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(PanelPaket, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(PanelRouter, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(PanelLangganan, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(PanelTransaksi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(PanelLaporan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addComponent(PanelTeknisi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(PanelTicket, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
+            .addGroup(FrameKiriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addComponent(PanelDashboard, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(PanelPelanggan, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(PanelPaket, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(PanelRouter, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(PanelLangganan, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                .addComponent(PanelTransaksi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelLaporan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(PanelTeknisi, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(PanelTicket, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameKiriLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelLogoHeader, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -567,7 +571,7 @@ public class Dashboard1 extends javax.swing.JFrame {
                 .addComponent(PanelTransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(PanelLaporan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         jPanel1.add(FrameKiri, java.awt.BorderLayout.WEST);
@@ -575,7 +579,7 @@ public class Dashboard1 extends javax.swing.JFrame {
         Layer1.setBackground(new java.awt.Color(255, 255, 255));
         Layer1.setLayout(new java.awt.BorderLayout());
 
-        PanelHeader.setBackground(new java.awt.Color(11, 20, 51));
+        PanelHeader.setBackground(new java.awt.Color(15, 23, 42));
         PanelHeader.setPreferredSize(new java.awt.Dimension(1383, 50));
 
         jDashboard1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -586,6 +590,14 @@ public class Dashboard1 extends javax.swing.JFrame {
 
         txtCari.setForeground(new java.awt.Color(204, 204, 204));
         txtCari.setText("Search");
+        txtCari.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCariFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtCariFocusLost(evt);
+            }
+        });
         txtCari.addActionListener(this::txtCariActionPerformed);
         txtCari.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -613,7 +625,7 @@ public class Dashboard1 extends javax.swing.JFrame {
                 .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(682, 682, 682)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 822, Short.MAX_VALUE)
                 .addComponent(jDashboard1)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel2))
@@ -621,19 +633,21 @@ public class Dashboard1 extends javax.swing.JFrame {
         PanelHeaderLayout.setVerticalGroup(
             PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelHeaderLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jDashboard1))
-            .addComponent(jLabel2)
-            .addGroup(PanelHeaderLayout.createSequentialGroup()
                 .addGap(13, 13, 13)
                 .addGroup(PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelHeaderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel2)
+                .addGroup(PanelHeaderLayout.createSequentialGroup()
+                    .addGap(13, 13, 13)
+                    .addComponent(jDashboard1)))
         );
 
         Layer1.add(PanelHeader, java.awt.BorderLayout.PAGE_START);
 
-        PanelFooter.setBackground(new java.awt.Color(11, 20, 51));
+        PanelFooter.setBackground(new java.awt.Color(15, 23, 42));
         PanelFooter.setPreferredSize(new java.awt.Dimension(1383, 35));
 
         btnLogout.setBackground(new java.awt.Color(79, 70, 229));
@@ -653,7 +667,7 @@ public class Dashboard1 extends javax.swing.JFrame {
             PanelFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFooterLayout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1151, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1156, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLogout)
@@ -674,7 +688,7 @@ public class Dashboard1 extends javax.swing.JFrame {
 
         Layer1.add(PanelFooter, java.awt.BorderLayout.PAGE_END);
 
-        PanelUtama.setLayout(new java.awt.CardLayout());
+        PanelUtama.setLayout(new java.awt.GridLayout());
         Layer1.add(PanelUtama, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(Layer1, java.awt.BorderLayout.CENTER);
@@ -765,6 +779,18 @@ public class Dashboard1 extends javax.swing.JFrame {
     private void txtTicketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtTicketMouseClicked
      switchPanel(new FormTiket.tiket());    // TODO add your handling code here:
     }//GEN-LAST:event_txtTicketMouseClicked
+
+    private void txtCariFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCariFocusGained
+    if (String.valueOf(txtCari.getText()).equals("Search")) {
+            txtCari.setText("");
+        }    // TODO add your handling code here:
+    }//GEN-LAST:event_txtCariFocusGained
+
+    private void txtCariFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCariFocusLost
+    if (txtCari.getText().equals("")) {
+            txtCari.setText("Search");    // TODO add your handling code here:
+    }
+    }//GEN-LAST:event_txtCariFocusLost
 private void cariMenu() {
     String key = txtCari.getText().toLowerCase();
 
