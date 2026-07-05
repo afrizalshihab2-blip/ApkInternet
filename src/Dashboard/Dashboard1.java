@@ -286,7 +286,7 @@ public class Dashboard1 extends javax.swing.JFrame {
 
         jLabelLogoHeader.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         jLabelLogoHeader.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelLogoHeader.setIcon(new javax.swing.ImageIcon("C:\\Users\\Admin\\Documents\\Icon\\Putra.Net.png")); // NOI18N
+        jLabelLogoHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Putra.Net.png"))); // NOI18N
         jLabelLogoHeader.setMaximumSize(new java.awt.Dimension(100, 100));
         jLabelLogoHeader.setMinimumSize(new java.awt.Dimension(200, 200));
 
@@ -625,7 +625,7 @@ public class Dashboard1 extends javax.swing.JFrame {
                 .addComponent(txtCari, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 822, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 817, Short.MAX_VALUE)
                 .addComponent(jDashboard1)
                 .addGap(6, 6, 6)
                 .addComponent(jLabel2))
@@ -667,7 +667,7 @@ public class Dashboard1 extends javax.swing.JFrame {
             PanelFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelFooterLayout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1156, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1151, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnLogout)
@@ -688,7 +688,7 @@ public class Dashboard1 extends javax.swing.JFrame {
 
         Layer1.add(PanelFooter, java.awt.BorderLayout.PAGE_END);
 
-        PanelUtama.setLayout(new java.awt.GridLayout());
+        PanelUtama.setLayout(new java.awt.GridLayout(1, 0));
         Layer1.add(PanelUtama, java.awt.BorderLayout.CENTER);
 
         jPanel1.add(Layer1, java.awt.BorderLayout.CENTER);
