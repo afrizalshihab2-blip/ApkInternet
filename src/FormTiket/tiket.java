@@ -150,13 +150,13 @@ private DefaultTableModel tabmode;
         jPanel1.setBackground(new java.awt.Color(11, 20, 51));
 
         jPanel2.setBackground(new java.awt.Color(11, 20, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tiket Pemasangan", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 255, 204))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MAINTENANCE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 255, 204))); // NOI18N
 
         jLabel2.setForeground(new java.awt.Color(0, 255, 204));
         jLabel2.setText("No. Tiket");
 
         jLabel3.setForeground(new java.awt.Color(0, 255, 204));
-        jLabel3.setText("Lokasi");
+        jLabel3.setText("Lokasi/Alamat");
 
         jLabel4.setForeground(new java.awt.Color(0, 255, 204));
         jLabel4.setText("Jenis Masalah");
@@ -173,9 +173,9 @@ private DefaultTableModel tabmode;
         jLabel8.setForeground(new java.awt.Color(0, 255, 204));
         jLabel8.setText("Teknisi");
 
-        cbprioritas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Prioritas--", "Normal", "Sedang", "Darurat", " " }));
+        cbprioritas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Pilih Prioritas--", "NORMAL ", "SEDANG", "DARURAT", " " }));
 
-        cbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Jenis Masalah--", "Rusak", "Wifi Error" }));
+        cbjenis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Jenis Masalah--", "INDIKATOR LOS", "SSID TIDAK TERBACA", "SINYAL LEMAH", "LEMOT", " " }));
 
         txtdesk.setColumns(20);
         txtdesk.setRows(5);
@@ -259,37 +259,31 @@ private DefaultTableModel tabmode;
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(bcari))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtteknisi)
-                                            .addComponent(jtgl, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(bcarip1))
-                                    .addComponent(txttiket, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(bsimpan)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(bubah))
-                                    .addComponent(cbjenis, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(97, 97, Short.MAX_VALUE))
+                                .addComponent(txtcari, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bcari))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtnama, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtlokasi, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbprioritas, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtid)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtteknisi)
+                                    .addComponent(jtgl, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(bcarip)
-                                .addGap(97, 97, 97))))
+                                .addComponent(bcarip1))
+                            .addComponent(txttiket, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(bsimpan)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(bubah))
+                            .addComponent(cbjenis, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(txtid)
+                                    .addComponent(txtnama)
+                                    .addComponent(txtlokasi)
+                                    .addComponent(cbprioritas, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(bcarip)))
+                        .addGap(100, 272, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -298,6 +292,10 @@ private DefaultTableModel tabmode;
                                 .addGap(80, 80, 80)
                                 .addComponent(cbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -372,7 +370,7 @@ private DefaultTableModel tabmode;
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(752, Short.MAX_VALUE))
+                .addContainerGap(577, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

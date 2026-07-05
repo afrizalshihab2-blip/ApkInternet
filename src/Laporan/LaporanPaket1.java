@@ -45,10 +45,11 @@ private DefaultTableModel tabmode;
 
         
         PreparedStatement ps3 = conn.prepareStatement(
-            "SELECT paket, COUNT(*) total FROM transaksi GROUP BY paket ORDER BY total DESC LIMIT 1"
+    "SELECT nama_paket, COUNT(*) total FROM langganan GROUP BY nama_paket ORDER BY total DESC LIMIT 1"
         );
         ResultSet rs3 = ps3.executeQuery();
-        if (rs3.next()) lblterpopuler.setText(rs3.getString("paket"));
+        if (rs3.next())
+        lblterpopuler.setText(rs3.getString("nama_paket"));
 
        
         PreparedStatement ps4 = conn.prepareStatement(
@@ -310,7 +311,7 @@ private DefaultTableModel tabmode;
         ));
         jScrollPane2.setViewportView(tblpaket);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 305, 1007, 371));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 305, 1040, 371));
 
         bcetak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Print_1.png"))); // NOI18N
         bcetak.setText("Cetak");

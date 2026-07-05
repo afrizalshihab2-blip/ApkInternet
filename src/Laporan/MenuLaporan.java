@@ -46,21 +46,25 @@ public class MenuLaporan extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(11, 26, 51));
 
+        Lppelanggan.setBackground(new java.awt.Color(11, 26, 51));
         Lppelanggan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lppelanggan.setText("Laporan Pelanggan");
         Lppelanggan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lppelanggan.addActionListener(this::LppelangganActionPerformed);
 
+        Lppaket.setBackground(new java.awt.Color(11, 26, 51));
         Lppaket.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lppaket.setText("Laporan Paket");
         Lppaket.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lppaket.addActionListener(this::LppaketActionPerformed);
 
+        Lpteknisi.setBackground(new java.awt.Color(11, 26, 51));
         Lpteknisi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lpteknisi.setText("Laporan Teknisi");
         Lpteknisi.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
         Lpteknisi.addActionListener(this::LpteknisiActionPerformed);
 
+        Lppendapatan.setBackground(new java.awt.Color(11, 26, 51));
         Lppendapatan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Lppendapatan.setText("Laporan Pendapatan");
         Lppendapatan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));

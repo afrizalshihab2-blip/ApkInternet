@@ -116,23 +116,35 @@ private DefaultTableModel tabmode;
             parameter.put("P_NAMA_BULAN", namaBulan[bulan]);
             JasperPrint print = JasperFillManager.fillReport(path, parameter, conn);
             JasperViewer.viewReport(print, false);
+            
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Gagal cetak: " + ex);
         }
     }
        public void exportPDF() {
     try {
+        int bulan = cbbulan.getSelectedIndex();
+        if (bulan == 0) {
+            JOptionPane.showMessageDialog(null, "Pilih bulan dulu!");
+            return;
+        }
+        String[] namaBulan = {"","Januari","Februari","Maret","April","Mei","Juni",
+                              "Juli","Agustus","September","Oktober","November","Desember"};
+
         JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Simpan PDF");
-        fc.setSelectedFile(new java.io.File("LaporanPaket.pdf"));
+        fc.setSelectedFile(new java.io.File("LaporanPendapatan.pdf"));
         int result = fc.showSaveDialog(null);
         
         if (result == JFileChooser.APPROVE_OPTION) {
             String path = fc.getSelectedFile().getAbsolutePath();
             if (!path.endsWith(".pdf")) path += ".pdf";
             
-            String jasperPath = "./src/Laporan/LaporanPendapatan1.jasper";
+            String jasperPath = "./src/Laporan/laporanpendapatann.jasper";
             HashMap parameter = new HashMap();
+            parameter.put("P_BULAN", bulan);
+            parameter.put("P_NAMA_BULAN", namaBulan[bulan]);
+
             JasperPrint print = JasperFillManager.fillReport(jasperPath, parameter, conn);
             JasperExportManager.exportReportToPdfFile(print, path);
             JOptionPane.showMessageDialog(null, "PDF berhasil disimpan!");
@@ -199,7 +211,7 @@ private DefaultTableModel tabmode;
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(lblPendapatan))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,10 +219,10 @@ private DefaultTableModel tabmode;
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPendapatan)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 93, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 280, -1));
 
         jPanel3.setBackground(new java.awt.Color(11, 26, 51));
         jPanel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
@@ -244,7 +256,7 @@ private DefaultTableModel tabmode;
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 93, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(11, 26, 51));
         jPanel4.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
@@ -275,10 +287,10 @@ private DefaultTableModel tabmode;
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblLunas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(555, 93, -1, -1));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 80, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(11, 26, 51));
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(0, 255, 51), new java.awt.Color(0, 255, 204), null));
@@ -309,10 +321,10 @@ private DefaultTableModel tabmode;
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblBelumBayar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(816, 93, -1, -1));
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, -1, -1));
 
         tbltransaksi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -340,7 +352,7 @@ private DefaultTableModel tabmode;
 
         bSimpan.setText("Simpan");
         bSimpan.addActionListener(this::bSimpanActionPerformed);
-        jPanel1.add(bSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(525, 270, -1, -1));
+        jPanel1.add(bSimpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, -1, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 

@@ -43,7 +43,7 @@ public class DaftarPaket extends javax.swing.JPanel {
           tabmode = new DefaultTableModel(null, Baris);
          
         try{
-            String sql = "SELECT * FROM paket where id_paket order by id_paket asc";
+            String sql = "SELECT * FROM paket ORDER BY id_paket ASC";
             Statement stat = conn.createStatement();
             ResultSet hasil = stat.executeQuery(sql);
             while (hasil.next()){
@@ -51,7 +51,7 @@ public class DaftarPaket extends javax.swing.JPanel {
                     hasil.getString(1),
                     hasil.getString(2),
                     hasil.getString(3),
-                    hasil.getString(4),
+                    hasil.getString(4)
                         
                   
                 });
@@ -71,6 +71,7 @@ public class DaftarPaket extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -89,7 +90,7 @@ public class DaftarPaket extends javax.swing.JPanel {
         btnBatal = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel3.setBackground(new java.awt.Color(11, 20, 51));
         jPanel3.setPreferredSize(new java.awt.Dimension(1170, 830));
@@ -210,17 +211,20 @@ public class DaftarPaket extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
                             .addComponent(txtHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(btnTambah)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnUbah)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBatal)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUbah)))
+                        .addComponent(btnBatal)))
                 .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,39 +250,33 @@ public class DaftarPaket extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUbah, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnBatal)
-                        .addComponent(btnTambah)
-                        .addComponent(btnHapus)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBatal)
+                    .addComponent(btnTambah)
+                    .addComponent(btnUbah, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHapus))
                 .addContainerGap(182, Short.MAX_VALUE))
         );
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 35, -1, -1));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        add(jPanel3);
+        jScrollPane2.setViewportView(jPanel3);
+
+        add(jScrollPane2);
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
-        kosong();
-        datatable();        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBatalActionPerformed
-
     private void tblPaketMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblPaketMouseClicked
-    int bar = tblPaket.getSelectedRow();
+        int bar = tblPaket.getSelectedRow();
         String a = tabmode.getValueAt(bar, 0).toString();
         String b = tabmode.getValueAt(bar, 1).toString();
         String c = tabmode.getValueAt(bar, 2).toString();
         String d = tabmode.getValueAt(bar, 3).toString();
-        
-        
+
         txtid.setText(a);
         txtNama.setText(b);
         txtSpeed.setText(c);
         txtHarga.setText(d);
-             // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_tblPaketMouseClicked
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
@@ -298,6 +296,24 @@ public class DaftarPaket extends javax.swing.JPanel {
             datatable();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
+    try {
+            String sql = "update paket set nama_paket=?,speed=?,harga=?where id_paket='" + txtid.getText() + "'";
+            PreparedStatement stat = conn.prepareStatement(sql);
+            stat.setString(1, txtNama.getText());
+            stat.setString(2, txtSpeed.getText());
+            stat.setString(3, txtHarga.getText());
+
+            stat.executeUpdate();
+            JOptionPane.showMessageDialog(null, "data berhasil diubah");
+            kosong();
+            txtid.requestFocus();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "data gagal diubah" + e);
+        }
+        datatable();    // TODO add your handling code here:
+    }//GEN-LAST:event_btnUbahActionPerformed
 
     private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
         String sql = "insert into paket values (?,?,?,?)";
@@ -327,9 +343,11 @@ public class DaftarPaket extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtidActionPerformed
 
-    private void btnUbahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbahActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnUbahActionPerformed
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
+        kosong();
+        datatable();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBatalActionPerformed
+
 
 
 
@@ -346,6 +364,7 @@ public class DaftarPaket extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblPaket;
     private javax.swing.JTextField txtHarga;
     private javax.swing.JTextField txtNama;

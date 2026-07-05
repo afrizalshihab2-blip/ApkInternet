@@ -52,6 +52,8 @@ char defaultEcho;
         jpw = new javax.swing.JPasswordField();
         blog = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,8 +85,8 @@ char defaultEcho;
         jPanel1.add(jUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 204, -1, -1));
 
         txtnm.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txtnm.setForeground(new java.awt.Color(204, 204, 204));
-        txtnm.setText("Type your username");
+        txtnm.setForeground(new java.awt.Color(51, 51, 51));
+        txtnm.setText("Masukan Userame");
         txtnm.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 txtnmFocusGained(evt);
@@ -111,7 +113,7 @@ char defaultEcho;
         jPanel1.add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 294, -1, -1));
 
         jpw.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jpw.setForeground(new java.awt.Color(204, 204, 204));
+        jpw.setForeground(new java.awt.Color(51, 51, 51));
         jpw.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jpwFocusGained(evt);
@@ -146,6 +148,14 @@ char defaultEcho;
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Putra.Net3.png"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 84, 285, 114));
+
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("pass : admin");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, -1, -1));
+
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("login : admin");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -247,6 +257,8 @@ char defaultEcho;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton blog;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelKiri;

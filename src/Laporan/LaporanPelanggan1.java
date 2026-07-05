@@ -68,14 +68,14 @@ private DefaultTableModel tabmode;
     try {
         JFileChooser fc = new JFileChooser();
         fc.setDialogTitle("Simpan PDF");
-        fc.setSelectedFile(new java.io.File("LaporanPaket.pdf"));
+        fc.setSelectedFile(new java.io.File("LaporanPelanggan.pdf"));
         int result = fc.showSaveDialog(null);
         
         if (result == JFileChooser.APPROVE_OPTION) {
             String path = fc.getSelectedFile().getAbsolutePath();
             if (!path.endsWith(".pdf")) path += ".pdf";
             
-            String jasperPath = "./src/Laporan/LaporanPelanggan1.jasper";
+            String jasperPath = "./src/Laporan/LaporanPelanggan.jasper";
             HashMap parameter = new HashMap();
             JasperPrint print = JasperFillManager.fillReport(jasperPath, parameter, conn);
             JasperExportManager.exportReportToPdfFile(print, path);

@@ -41,7 +41,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="752" max="32767" attributes="0"/>
+                      <EmptySpace pref="577" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -63,7 +63,7 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Tiket Pemasangan">
+                    <TitledBorder title="MAINTENANCE">
                       <Color PropertyName="color" blue="cc" green="ff" red="0" type="rgb"/>
                     </TitledBorder>
                   </Border>
@@ -90,48 +90,39 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="txtcari" min="-2" pref="242" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="bcari" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="txtteknisi" max="32767" attributes="0"/>
-                                                      <Component id="jtgl" min="-2" pref="461" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="bcarip1" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="txttiket" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="bsimpan" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="bubah" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Component id="cbjenis" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="100" pref="97" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jScrollPane3" min="-2" pref="566" max="-2" attributes="0"/>
-                                              <Component id="txtnama" min="-2" pref="461" max="-2" attributes="0"/>
-                                              <Component id="txtlokasi" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
-                                              <Component id="cbprioritas" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
-                                              <Component id="jScrollPane2" min="-2" pref="461" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="txtcari" min="-2" pref="242" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="bcari" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="txtid" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtteknisi" max="32767" attributes="0"/>
+                                              <Component id="jtgl" min="-2" pref="461" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="bcarip1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="txttiket" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="bsimpan" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="bubah" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="cbjenis" alignment="0" min="-2" pref="461" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txtid" max="32767" attributes="0"/>
+                                              <Component id="txtnama" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="txtlokasi" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="cbprioritas" alignment="1" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane2" alignment="1" pref="461" max="32767" attributes="0"/>
+                                          </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="bcarip" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <EmptySpace min="100" pref="272" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -145,6 +136,11 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -245,7 +241,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="cc" green="ff" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Lokasi"/>
+                    <Property name="text" type="java.lang.String" value="Lokasi/Alamat"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel4">
@@ -297,9 +293,9 @@
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="5">
                         <StringItem index="0" value="--Pilih Prioritas--"/>
-                        <StringItem index="1" value="Normal"/>
-                        <StringItem index="2" value="Sedang"/>
-                        <StringItem index="3" value="Darurat"/>
+                        <StringItem index="1" value="NORMAL "/>
+                        <StringItem index="2" value="SEDANG"/>
+                        <StringItem index="3" value="DARURAT"/>
                         <StringItem index="4" value=" "/>
                       </StringArray>
                     </Property>
@@ -311,10 +307,13 @@
                 <Component class="javax.swing.JComboBox" name="cbjenis">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="3">
+                      <StringArray count="6">
                         <StringItem index="0" value="--Jenis Masalah--"/>
-                        <StringItem index="1" value="Rusak"/>
-                        <StringItem index="2" value="Wifi Error"/>
+                        <StringItem index="1" value="INDIKATOR LOS"/>
+                        <StringItem index="2" value="SSID TIDAK TERBACA"/>
+                        <StringItem index="3" value="SINYAL LEMAH"/>
+                        <StringItem index="4" value="LEMOT"/>
+                        <StringItem index="5" value=" "/>
                       </StringArray>
                     </Property>
                   </Properties>
