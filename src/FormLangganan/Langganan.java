@@ -504,7 +504,7 @@ private DefaultTableModel tabmode;
         String g = tabmode.getValueAt(bar, 6).toString();
 
         txtidlangg.setText(a);
-        txtid.setText(b);
+        txtnama.setText(b);
         try {
             java.util.Date date = new java.text.SimpleDateFormat("yyyy-MM-dd").parse(c);
             jtgl.setDate(date);

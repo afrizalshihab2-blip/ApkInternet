@@ -219,6 +219,7 @@ private DefaultTableModel tabmode;
 
         bcari.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/Search_3.png"))); // NOI18N
         bcari.setText("Cari");
+        bcari.addActionListener(this::bcariActionPerformed);
 
         tbltiket.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -495,6 +496,10 @@ private DefaultTableModel tabmode;
     }
         
     }//GEN-LAST:event_tbltiketMouseClicked
+
+    private void bcariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bcariActionPerformed
+datatable();        // TODO add your handling code here:
+    }//GEN-LAST:event_bcariActionPerformed
  
      
     
