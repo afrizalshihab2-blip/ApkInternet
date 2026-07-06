@@ -793,26 +793,34 @@ public class Dashboard1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCariFocusLost
 private void cariMenu() {
     String key = txtCari.getText().toLowerCase();
-
-    switch(key) {
-
-        case "teknisi" -> switchPanel(new FormTeknisi.Teknisi11());
-
-        case "router" -> switchPanel(new FormRouter.Router());
-
-        case "paket" -> switchPanel(new FormPaket.DaftarPaket());
-
-        case "langganan" -> switchPanel(new FormLangganan.Langganan());
-        
-        case "pelanggan" -> switchPanel(new FormPelanggan.Pelanggan());
-        
-        case "transaksi" -> switchPanel(new FormTransaksi.Transaksii());
-        
-        case "tiket" -> switchPanel(new FormTiket.tiket());
-        
-        case "laporan" -> switchPanel(new Laporan.MenuLaporan());
-
-        default -> JOptionPane.showMessageDialog(this, "Menu tidak ditemukan!");
+    switch (key) {
+        case "teknisi":
+            switchPanel(new FormTeknisi.Teknisi11());
+            break;
+        case "router":
+            switchPanel(new FormRouter.Router());
+            break;
+        case "paket":
+            switchPanel(new FormPaket.DaftarPaket());
+            break;
+        case "langganan":
+            switchPanel(new FormLangganan.Langganan());
+            break;
+        case "pelanggan":
+            switchPanel(new FormPelanggan.Pelanggan());
+            break;
+        case "transaksi":
+            switchPanel(new FormTransaksi.Transaksii());
+            break;
+        case "tiket":
+            switchPanel(new FormTiket.tiket());
+            break;
+        case "laporan":
+            switchPanel(new Laporan.MenuLaporan());
+            break;
+        default:
+            JOptionPane.showMessageDialog(this, "Menu tidak ditemukan!");
+            break;
     }
 }
     /**
